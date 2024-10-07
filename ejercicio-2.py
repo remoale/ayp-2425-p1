@@ -1,7 +1,13 @@
 from typing import List
 
 def find_peaks(mountain: List[int]) -> List[int]:
-  pass
+  result = []
+  if 3 <= len(mountain) <= 100:
+    for i in range(len(mountain))[1:-1]:
+      if 1 <= mountain[i] <= 100:
+        if mountain[i] > mountain[i - 1] and mountain[i] > mountain[i + 1]:
+          result.append(i)
+  return result
 
 def main():
 
